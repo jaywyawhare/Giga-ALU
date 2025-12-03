@@ -14,3 +14,12 @@ add_executable(alu_vm
 
 target_compile_features(alu_vm PRIVATE c_std_17)
 
+add_executable(alu_tests
+    src/alu.c
+    tests/alu_tests.c)
+
+target_include_directories(alu_tests PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+target_compile_features(alu_tests PRIVATE c_std_17)
+
