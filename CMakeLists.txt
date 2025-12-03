@@ -27,3 +27,13 @@ target_include_directories(alu_tests PRIVATE
 
 target_compile_features(alu_tests PRIVATE c_std_17)
 
+add_executable(lexer_dump
+    src/lexer.c
+    src/lexer.h
+    src/lexer_main.c)
+
+target_include_directories(lexer_dump PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+target_compile_features(lexer_dump PRIVATE c_std_17)
+
