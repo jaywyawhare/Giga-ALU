@@ -37,3 +37,13 @@ target_include_directories(lexer_dump PRIVATE
 
 target_compile_features(lexer_dump PRIVATE c_std_17)
 
+add_executable(parser_dump
+    src/lexer.c
+    src/parser.c
+    src/parser_main.c)
+
+target_include_directories(parser_dump PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
+target_compile_features(parser_dump PRIVATE c_std_17)
+
