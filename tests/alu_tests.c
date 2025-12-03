@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-#include "alu.h"
+#include "alu/alu.h"
 
 static int test_add_exhaustive(void) {
     int failure_count = 0;

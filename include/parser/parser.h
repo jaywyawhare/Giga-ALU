@@ -1,7 +1,7 @@
 #ifndef GIGA_PARSER_H
 #define GIGA_PARSER_H
 
-#include "lexer.h"
+#include "lexer/lexer.h"
 #include <stddef.h>
 #include <stdint.h>
 

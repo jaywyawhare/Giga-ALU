@@ -4,8 +4,8 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#include "isa.h"
-#include "alu.h"
+#include "isa/isa.h"
+#include "alu/alu.h"
 
 /**
  * @brief Virtual machine state for the Giga-ALU CPU.

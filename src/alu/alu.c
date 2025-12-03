@@ -1,4 +1,4 @@
-#include "alu.h"
+#include "alu/alu.h"
 
 static inline uint8_t mask4(uint8_t value) {
     return (uint8_t)(value & 0x0F);
