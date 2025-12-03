@@ -10,7 +10,11 @@ set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
 
 add_executable(alu_vm
-    src/main.c)
+    src/main.c
+    src/alu.c
+    src/isa.h
+    src/vm.c
+    src/vm.h)
 
 target_compile_features(alu_vm PRIVATE c_std_17)
 
