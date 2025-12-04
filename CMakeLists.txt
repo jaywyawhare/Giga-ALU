@@ -13,7 +13,10 @@ set(CMAKE_C_EXTENSIONS OFF)
 add_executable(alu_vm
     src/main.c
     src/alu/alu.c
-    src/vm/vm.c)
+    src/vm/vm.c
+    src/lexer/lexer.c
+    src/parser/parser.c
+    src/assembler/assembler.c)
 
 target_include_directories(alu_vm PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include)
