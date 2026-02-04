@@ -57,6 +57,7 @@ target_compile_features(parser_tests PRIVATE c_std_17)
 # VM tests
 add_executable(vm_tests
     src/vm/vm.c
+    src/alu/alu.c
     tests/vm_tests.c)
 
 target_include_directories(vm_tests PRIVATE
