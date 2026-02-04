@@ -53,6 +53,43 @@ int giga_vm_load_program(GigaVmState *state,
  */
 int giga_vm_fetch_word(const GigaVmState *state, uint16_t *out_word);
 
+/**
+ * @brief VM execution result codes.
+ */
+typedef enum {
+    GIGA_VM_OK = 0,         /** Instruction executed successfully */
+    GIGA_VM_HALTED = 1,     /** HALT instruction executed */
+    GIGA_VM_ERROR = -1,     /** General error */
+    GIGA_VM_PC_OUT_OF_RANGE = -2  /** Program counter out of range */
+} GigaVmResult;
+
+/**
+ * @brief Execute one instruction at the current PC and advance PC.
+ *
+ * Performs fetch-decode-execute for a single instruction:
+ * - Fetches instruction word at current PC
+ * - Decodes the instruction
+ * - Executes the operation (ALU, memory, control flow)
+ * - Updates registers, flags, and PC as needed
+ *
+ * @param state VM instance.
+ * @return GIGA_VM_OK on success, GIGA_VM_HALTED if HALT executed,
+ *         negative value on error.
+ */
+GigaVmResult giga_vm_step(GigaVmState *state);
+
+/**
+ * @brief Run program until HALT or error.
+ *
+ * Repeatedly calls giga_vm_step until HALT is encountered,
+ * an error occurs, or max_steps is reached.
+ *
+ * @param state VM instance.
+ * @param max_steps Maximum instructions to execute (0 for unlimited).
+ * @return GIGA_VM_HALTED on normal termination, negative on error.
+ */
+GigaVmResult giga_vm_run(GigaVmState *state, size_t max_steps);
+
 #endif /* GIGA_VM_H */
 
 
